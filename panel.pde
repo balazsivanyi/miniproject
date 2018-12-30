@@ -32,7 +32,7 @@ void display() {
   
   fill(#ffffff);
   textSize(48);
-  text(score, 470, 400);
+  //text(score, 470, 400);
   
   
 
