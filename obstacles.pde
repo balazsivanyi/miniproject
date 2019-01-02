@@ -8,7 +8,7 @@ class Obstacle {
   float difference = random(-250, 350);
   float gap = 200;
   float speedX = -3;
-  boolean hit;
+  boolean obstacleHit;
   int score;
   float scoreX = 50;
   float scoreY = 50;
@@ -30,9 +30,9 @@ void movement() {
 
 void hitdetection() {
   if (((myBall.ballX + myBall.ballSize) >= obstacleX) && ((myBall.ballX + myBall.ballSize) <= (obstacleX + obstacleW)) && (myBall.ballY <= (obstacleY + (obstacleH - difference)) || ((myBall.ballY + myBall.ballSize) >= (obstacleH - difference + gap)))) {
-    hit = true;
+    obstacleHit = true;
   } else {
-    hit = false;
+    obstacleHit = false;
     score += 1;
   }  
  }

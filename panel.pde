@@ -28,12 +28,8 @@ void display() {
   
   fill(#ffffff);
   textSize(48);
-  text(s2, 470, 400);
-  
-  fill(#ffffff);
-  textSize(48);
-  //text(score, 470, 400);
-  
+  text(s2, 450, 500);
+   
   
 
 }
