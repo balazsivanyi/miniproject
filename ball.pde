@@ -1,6 +1,6 @@
 class Ball {
 
-  //variables
+  // variables
   float ballX;
   float ballY;
   float ballSize;
@@ -8,6 +8,14 @@ class Ball {
   float speed = 0;
   float gravity = 0.3;
   float jump = -8;
+
+  float x = 0.0;
+  float y = 0.0;
+  float z = 0.0;
+
+  float r;
+  float g;
+  float b;
 
 
   Ball (float temp_ballX, float temp_ballY, float temp_ballSize) {
@@ -17,12 +25,20 @@ class Ball {
   }
 
   void display() {
+    // colour of the ball with Perlin noise
+    x += .01;
+    y += .01;
+    z += .01;
+    r = noise(x) * 255;
+    g = noise(x, y) * 255;
+    b = noise(x, y, z) * 255;
+    // basic displaying
     noStroke();
-    fill(#f9f9f9);
+    fill(r, g, b);
     ellipse(ballX, ballY, ballSize, ballSize);
   }
-
-  void gravity() {
+  //  setting up the gravity of the ball, which is a vertical movement
+  void gravity() { 
 
     ballY += speed;
     speed += gravity;
@@ -35,8 +51,8 @@ class Ball {
       ballY = 0;
     }
   }
-
-  void jump() {
+  // that's how the jump is happening 
+  void jump() { 
     speed += jump;
   }
 }
